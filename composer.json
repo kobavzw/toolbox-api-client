@@ -14,10 +14,7 @@
         "psr/http-client-implementation": "*",
         "psr/http-factory-implementation": "*",
         "php-http/discovery": "^1.19",
-        "json-mapper/json-mapper": "^2.21",
-        "symfony/http-client": "^7.0",
-        "nyholm/psr7": "^1.8",
-        "psr/http-client": "^1.0"
+        "json-mapper/json-mapper": "^2.21"
     },
     "autoload": {
         "psr-4": {
