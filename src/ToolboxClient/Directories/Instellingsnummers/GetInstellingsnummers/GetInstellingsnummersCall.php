@@ -1,13 +1,14 @@
 <?php
 
-namespace Koba\ToolboxClient\Directories\Contactpersonen\GetContactpersonen;
+namespace Koba\ToolboxClient\Directories\Instellingsnummers\GetInstellingsnummers;
 
 use Koba\ToolboxClient\Call\AbstractCall;
 use Koba\ToolboxClient\Call\ResponseProcessor;
 use Koba\ToolboxClient\Directory\DirectoryInterface;
 use Koba\ToolboxClient\Request\HttpMethod;
 
-class GetContactpersonenCall extends AbstractCall
+class GetInstellingsnummersCall
+extends AbstractCall
 {
     public static function make(DirectoryInterface $directory): self
     {
@@ -21,17 +22,15 @@ class GetContactpersonenCall extends AbstractCall
 
     protected function getEndpoint(): string
     {
-        return 'v1/contactpersonen';
+        return 'v1/instellingsnummers';
     }
 
-    /**
-     * @return Instelling[]
-     */
+    /** @return Instellingsnummer[] */
     public function send(): array
     {
         return ResponseProcessor::mapArray(
-            $this->performRequest(), 
-            Instelling::class
+            $this->performRequest(),
+            Instellingsnummer::class
         );
     }
 }
