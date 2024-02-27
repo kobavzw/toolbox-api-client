@@ -7,4 +7,5 @@ enum Scope: string
     case STATISTIEKEN = 'statistieken';
     case CONTACTPERSONEN = 'contactpersonen';
     case INSTELLINGSNUMMERS = 'instellingsnummers';
+    case INVENTARIS = 'inventaris';
 }
