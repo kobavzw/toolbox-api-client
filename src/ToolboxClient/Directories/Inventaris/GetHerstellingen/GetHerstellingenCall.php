@@ -25,7 +25,10 @@ class GetHerstellingenCall extends AbstractCall
         return 'v1/inventaris/herstelling';
     }
 
-    public function send(): mixed
+    /**
+     * @return Herstelling[]
+     */
+    public function send(): array
     {
         return ResponseProcessor::mapArray(
             $this->performRequest(),
