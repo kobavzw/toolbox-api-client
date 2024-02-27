@@ -5,6 +5,7 @@ namespace Koba\ToolboxClient;
 use Koba\ToolboxClient\AccessToken\AccessTokenStrategyInterface;
 use Koba\ToolboxClient\Directories\Contactpersonen\ContactpersonenDirectory;
 use Koba\ToolboxClient\Directories\Instellingsnummers\InstellingsnummersDirectory;
+use Koba\ToolboxClient\Directories\Inventaris\InventarisDirectory;
 use Koba\ToolboxClient\Directories\Statistieken\StatistiekenDirectory;
 use Koba\ToolboxClient\Request\EncapsulatedRequestFactory;
 use Psr\Http\Client\ClientInterface;
@@ -44,5 +45,10 @@ class ToolboxClient
     public function instellingsnummers(): InstellingsnummersDirectory
     {
         return new InstellingsnummersDirectory($this->requestFactory);
+    }
+
+    public function inventaris(): InventarisDirectory
+    {
+        return new InventarisDirectory($this->requestFactory);
     }
 }
