@@ -8,4 +8,5 @@ enum Scope: string
     case CONTACTPERSONEN = 'contactpersonen';
     case INSTELLINGSNUMMERS = 'instellingsnummers';
     case INVENTARIS = 'inventaris';
+    case VERHUURCONTRACTEN_GOEDKEUREN = 'verhuurcontracten.goedkeuren';
 }
