@@ -42,6 +42,24 @@ class ResponseProcessor
     /**
      * @template T of object
      * @param class-string<T> $targetClass
+     * @return T
+     */
+    public static function mapClass(ResponseInterface $response, string $targetClass)
+    {
+        $decoded = json_decode($response->getBody()->getContents());
+        if (is_object($decoded) && property_exists($decoded, 'data')) {
+            return self::getJsonMapper()->mapToClass(
+                $decoded->data,
+                $targetClass
+            );
+        }
+
+        throw new InternalErrorException('Invalid JSON property requested.');
+    }
+
+    /**
+     * @template T of object
+     * @param class-string<T> $targetClass
      * @return T[]
      */
     public static function mapArray(ResponseInterface $response, string $targetClass)

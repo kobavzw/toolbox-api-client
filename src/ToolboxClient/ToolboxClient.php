@@ -6,6 +6,8 @@ use Koba\ToolboxClient\AccessToken\AccessTokenStrategyInterface;
 use Koba\ToolboxClient\Directories\Contactpersonen\ContactpersonenDirectory;
 use Koba\ToolboxClient\Directories\Instellingsnummers\InstellingsnummersDirectory;
 use Koba\ToolboxClient\Directories\Inventaris\InventarisDirectory;
+use Koba\ToolboxClient\Directories\Leerling\LeerlingDirectory;
+use Koba\ToolboxClient\Directories\Leraar\LeraarDirectory;
 use Koba\ToolboxClient\Directories\Statistieken\StatistiekenDirectory;
 use Koba\ToolboxClient\Directories\Verhuurcontracten\VerhuurcontractenDirectory;
 use Koba\ToolboxClient\Request\EncapsulatedRequestFactory;
@@ -56,5 +58,15 @@ class ToolboxClient
     public function verhuurcontracten(): VerhuurcontractenDirectory
     {
         return new VerhuurcontractenDirectory($this->requestFactory);
+    }
+
+    public function leerlingen(): LeerlingDirectory
+    {
+        return new LeerlingDirectory($this->requestFactory);
+    }
+
+    public function leraren(): LeraarDirectory
+    {
+        return new LeraarDirectory($this->requestFactory);
     }
 }
