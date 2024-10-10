@@ -4,6 +4,7 @@ namespace Koba\ToolboxClient;
 
 use Koba\ToolboxClient\AccessToken\AccessTokenStrategyInterface;
 use Koba\ToolboxClient\Directories\Contactpersonen\ContactpersonenDirectory;
+use Koba\ToolboxClient\Directories\Gebruikersbeheer\GebruikersbeheerDirectory;
 use Koba\ToolboxClient\Directories\Instellingsnummers\InstellingsnummersDirectory;
 use Koba\ToolboxClient\Directories\Inventaris\InventarisDirectory;
 use Koba\ToolboxClient\Directories\Leerling\LeerlingDirectory;
@@ -68,5 +69,10 @@ class ToolboxClient
     public function leraren(): LeraarDirectory
     {
         return new LeraarDirectory($this->requestFactory);
+    }
+
+    public function gebruikersbeheer(): GebruikersbeheerDirectory
+    {
+        return new GebruikersbeheerDirectory($this->requestFactory);
     }
 }

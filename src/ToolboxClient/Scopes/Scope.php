@@ -11,4 +11,5 @@ enum Scope: string
     case VERHUURCONTRACTEN_GOEDKEUREN = 'verhuurcontracten.goedkeuren';
     case LERAREN = 'leraren';
     case LEERLINGEN = 'leerlingen';
+    case GEBRUIKERSBEHEER = 'gebruikersbeheer';
 }
