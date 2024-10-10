@@ -25,7 +25,11 @@ class GetPermissiesCall extends AbstractCall
         return "v1/gebruikersbeheer/permissie";
     }
 
-    public function send(): mixed {
+    /**
+     * @return Permissie[]
+     */
+    public function send(): array
+    {
         return ResponseProcessor::mapArray(
             $this->performRequest(),
             Permissie::class
