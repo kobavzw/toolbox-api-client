@@ -12,4 +12,5 @@ enum Scope: string
     case LERAREN = 'leraren';
     case LEERLINGEN = 'leerlingen';
     case GEBRUIKERSBEHEER = 'gebruikersbeheer';
+    case FINANCIEEL_OVERTEZETTEN = 'financieel.overtezetten';
 }
