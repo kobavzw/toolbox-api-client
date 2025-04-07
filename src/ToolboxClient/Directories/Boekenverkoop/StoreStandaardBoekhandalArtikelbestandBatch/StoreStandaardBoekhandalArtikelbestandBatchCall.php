@@ -1,6 +1,6 @@
 <?php
 
-namespace Koba\ToolboxClien\Directories\Boekenverkoop\StoreStandaardBoekhandalArtikelbestandBatch;
+namespace Koba\ToolboxClient\Directories\Boekenverkoop\StoreStandaardBoekhandalArtikelbestandBatch;
 
 use DateTimeInterface;
 use Koba\ToolboxClient\Call\AbstractCall;
@@ -69,7 +69,14 @@ class StoreStandaardBoekhandalArtikelbestandBatchCall extends AbstractCall
      */
     protected function getBody(): array
     {
-        return $this->artikels;
+        return array_map(
+            fn ($entry) => [
+                ...$entry,
+                'vermoedelijkeverschijningsdatum' => $entry['vermoedelijkeverschijningsdatum']?->format('c'),
+                'laatsteUpdate' => $entry['laatsteUpdate']->format('c'),
+            ],
+            $this->artikels
+        );
     }
 
     public function send(): ResponseInterface

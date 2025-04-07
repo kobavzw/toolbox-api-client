@@ -2,7 +2,7 @@
 
 namespace Koba\ToolboxClient\Directories\Boekenverkoop;
 
-use Koba\ToolboxClien\Directories\Boekenverkoop\StoreStandaardBoekhandalArtikelbestandBatch\StoreStandaardBoekhandalArtikelbestandBatchCall;
+use Koba\ToolboxClient\Directories\Boekenverkoop\StoreStandaardBoekhandalArtikelbestandBatch\StoreStandaardBoekhandalArtikelbestandBatchCall;
 use Koba\ToolboxClient\Directory\Directory;
 
 /**
