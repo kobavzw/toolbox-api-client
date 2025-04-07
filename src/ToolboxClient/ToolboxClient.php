@@ -3,6 +3,7 @@
 namespace Koba\ToolboxClient;
 
 use Koba\ToolboxClient\AccessToken\AccessTokenStrategyInterface;
+use Koba\ToolboxClient\Directories\Boekenverkoop\BoekenverkoopDirectory;
 use Koba\ToolboxClient\Directories\Contactpersonen\ContactpersonenDirectory;
 use Koba\ToolboxClient\Directories\Financieel\FinancieelDirectory;
 use Koba\ToolboxClient\Directories\Gebruikersbeheer\GebruikersbeheerDirectory;
@@ -80,5 +81,10 @@ class ToolboxClient
     public function financieel(): FinancieelDirectory
     {
         return new FinancieelDirectory($this->requestFactory);
+    }
+
+    public function boekenverkoop(): BoekenverkoopDirectory
+    {
+        return new BoekenverkoopDirectory($this->requestFactory);
     }
 }
