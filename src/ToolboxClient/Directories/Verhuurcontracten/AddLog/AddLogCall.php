@@ -48,7 +48,7 @@ class AddLogCall extends AbstractCall
 
     protected function getEndpoint(): string
     {
-        return "v1/verhuurcontrantacten/contract/{$this->contractId}/log";
+        return "v1/verhuurcontracten/contract/{$this->contractId}/log";
     }
 
     /**
