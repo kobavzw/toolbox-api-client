@@ -12,6 +12,7 @@ use Koba\ToolboxClient\Directories\Inventaris\InventarisDirectory;
 use Koba\ToolboxClient\Directories\Leerling\LeerlingDirectory;
 use Koba\ToolboxClient\Directories\Leraar\LeraarDirectory;
 use Koba\ToolboxClient\Directories\Statistieken\StatistiekenDirectory;
+use Koba\ToolboxClient\Directories\Support\SupportDirectory;
 use Koba\ToolboxClient\Directories\Verhuurcontracten\VerhuurcontractenDirectory;
 use Koba\ToolboxClient\Request\EncapsulatedRequestFactory;
 use Psr\Http\Client\ClientInterface;
@@ -86,5 +87,10 @@ class ToolboxClient
     public function boekenverkoop(): BoekenverkoopDirectory
     {
         return new BoekenverkoopDirectory($this->requestFactory);
+    }
+
+    public function support(): SupportDirectory
+    {
+        return new SupportDirectory($this->requestFactory);
     }
 }
